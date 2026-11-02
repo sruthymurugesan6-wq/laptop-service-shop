@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends Technology | Laptop Service</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #eaf4ff;
+      background: #06172b;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 8%;
+      background: rgba(5, 20, 39, 0.97);
+      border-bottom: 1px solid #1e4e79;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .logo span { color: #42b4ff; }
+
+    nav a {
+      color: #d8edff;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover { color: #42b4ff; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 45px;
+      min-height: 610px;
+      padding: 75px 8%;
+      background:
+        radial-gradient(circle at 80% 35%, #176baa 0%, transparent 27%),
+        linear-gradient(135deg, #06172b, #0b3968);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #42b4ff;
+      border-radius: 20px;
+      color: #7eceff;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      margin: 18px 0;
+      color: white;
+      font-size: 52px;
+      line-height: 1.08;
+    }
+
+    .hero h1 span { color: #42b4ff; }
+
+    .hero p {
+      color: #c0daf0;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 8px 7px 0 0;
+      padding: 14px 18px;
+      border-radius: 7px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .button:hover { transform: translateY(-3px); }
+
+    .whatsapp { background: #25d366; }
+    .call { background: #1689df; }
+    .map { border: 1px solid #66beff; }
+
+    .hero-image {
+      overflow: hidden;
+      border: 1px solid #3988c2;
+      border-radius: 20px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+    }
+
+    section { padding: 80px 8%; }
+
+    .title {
+      margin: 0 0 12px;
+      color: white;
+      text-align: center;
+      font-size: 33px;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 0 auto 42px;
+      color: #aac8e1;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 28px 23px;
+      border: 1px solid #1e4c75;
+      border-radius: 12px;
+      background: #0a2342;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #48b8ff;
+    }
+
+    .card-icon { font-size: 37px; }
+
+    .card h3 {
+      margin: 17px 0 10px;
+      color: white;
+    }
+
+    .card p {
+      margin: 0;
+      color: #b3cfe5;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .why-section { background: #091e39; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .why-item {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .why-item h3 {
+      margin: 7px 0;
+      color: #55bdff;
+      font-size: 20px;
+    }
+
+    .why-item p {
+      margin: 0;
+      color: #b5cde1;
+      line-height: 1.6;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .review {
+      padding: 25px;
+      border-left: 4px solid #42b4ff;
+      border-radius: 8px;
+      background: #0b2747;
+    }
+
+    .stars { color: #ffc542; font-size: 18px; }
+
+    .review p {
+      color: #c7dced;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .review h4 {
+      margin-bottom: 0;
+      color: #6dc8ff;
+    }
+
+    .contact-box {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 48px;
+      border: 1px solid #2d70a8;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #0d416f, #081d38);
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      margin-top: 0;
+      color: white;
+      font-size: 32px;
+    }
+
+    .contact-box p {
+      color: #d6eaff;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    footer {
+      padding: 25px;
+      color: #91b1ca;
+      background: #030e1c;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      header { padding: 15px 5%; }
+      nav a { margin-left: 10px; font-size: 13px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+      }
+
+      .hero h1 { font-size: 39px; }
+      .hero-image img { height: 270px; }
+      section { padding: 60px 7%; }
+      .contact-box { padding: 35px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="#">Friends <span>Technology</span></a>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="tag">LAPTOP SERVICE · SARAVANAMPATTI</span>
+
+      <h1>Expert Laptop Repair You Can <span>Trust.</span></h1>
+
+      <p>
+        Professional laptop repair, upgrades, software support, and replacement services.
+        Visit Friends Technology opposite KCT Tech Park.
+      </p>
+
+      <!-- Replace 919876543210 with your actual WhatsApp/phone number -->
+      <a class="button whatsapp" href="https://wa.me/919876543210" target="_blank">
+        WhatsApp Us
+      </a>
+
+      <a class="button call" href="tel:+919876543210">
+        Call Now
+      </a>
+
+      <a class="button map"
+         href="https://www.google.com/maps/search/?api=1&query=Friends+Technology+Saravanampatti+Opposite+KCT+Tech+Park"
+         target="_blank">
+        Get Directions
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=85"
+           alt="Laptop service and repair">
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="title">Our Laptop Services</h2>
+    <p class="subtitle">
+      Reliable solutions for students, professionals, and businesses.
+      We service major laptop brands.
+    </p>
+
+    <div class="services">
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>Laptop Repair</h3>
+        <p>Complete diagnosis and repair for common laptop hardware problems.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>Screen Replacement</h3>
+        <p>Replacement of broken, flickering, or damaged laptop displays.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔋</div>
+        <h3>Battery Replacement</h3>
+        <p>Replace weak batteries and restore your laptop's backup time.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💾</div>
+        <h3>SSD & RAM Upgrade</h3>
+        <p>Improve laptop speed and performance with hardware upgrades.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🪟</div>
+        <h3>Windows & Software</h3>
+        <p>Windows installation, drivers, antivirus, and software setup.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⌨️</div>
+        <h3>Keyboard & Charger</h3>
+        <p>Keyboard, adapter, hinge, charging port, and cable repair.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section" id="why-us">
+    <h2 class="title">Why Choose Us?</h2>
+    <p class="subtitle">Straightforward service and careful attention to your device.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>⚡ Fast Service</h3>
+        <p>Quick problem diagnosis and efficient repairs.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>🛡️ Trusted Care</h3>
+        <p>Your device is handled with care and attention.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>💻 All Major Brands</h3>
+        <p>Service support for popular laptop brands.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>📍 Easy to Find</h3>
+        <p>Conveniently located opposite KCT Tech Park.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2 class="title">What Customers Say</h2>
+    <p class="subtitle">Replace these sample reviews with genuine customer feedback later.</p>
+
+    <div class="reviews">
+      <div class="review">
+        <div class="stars"></div>
+        <p>"Quick service and a clear explanation of the laptop problem. Highly recommended."</p>
+        <h4>— Customer Name</h4>venkat,coimbatore</h4>
+        <div class="stars">★★★★★</div>
+        <p>"My laptop was running very slowly. After the upgrade, it works perfectly."</p>
+        <h4>— Customer Name</h4>Karthik, coimbatore</h4>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Good service near KCT Tech Park. The staff was helpful and professional."</p>
+        <h4>— Customer Name</h4> Priya, Coimbatore</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h2>Visit Friends Technology</h2>
+      <p><strong>Professional Laptop Service in Saravanampatti</strong></p>
+      <p>📍 Opposite KCT Tech Park, Saravanampatti</p>
+      <p>📞 Add your phone number here</p>
+
+      <a class="button whatsapp" href="https://wa.me/809000209" target="_blank">
+        Chat on WhatsApp
+      </a>
+
+      <a class="button map"
+         href="https://www.google.com/maps/search/?api=1&query=Friends+Technology+Saravanampatti+Opposite+KCT+Tech+Park"
+         target="_blank">
+        Open Google Maps
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Friends Technology · Laptop Service, Saravanampatti
+  </footer>
+
+</body>
+</html>
